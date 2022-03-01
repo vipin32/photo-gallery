@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Albums extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['name', 'description', 'cover_image'];
+
+    public function photos(){
+        $this->hasMany('App\Models\Photos');
+    }
 }

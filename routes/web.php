@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [App\Http\Controllers\AlbumsController::class, 'index'])->name('albums.index');
+Route::get('/albums/create', [App\Http\Controllers\AlbumsController::class, 'create'])->name('albums.create');
+Route::post('/albums/store', [App\Http\Controllers\AlbumsController::class, 'store'])->name('albums.store');
+
+
+
